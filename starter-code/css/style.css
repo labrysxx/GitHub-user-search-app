@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --main-typography: 'Space Mono', monospace;
+  --medium-blue: #4B6A9B;
+  --light-blue: #0079FF;
+  --second-blue: #697C9A;
+  --dark-blue: #2B3442;
+  --transparent-blue: #F6F8FF;
+  --white: #FEFEFE
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--transparent-blue);
+  margin: 144px 355px 170px 355px;
+}
+
+header {
+  width: 841px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white);
+  padding: 22px 10px 22px 32px;
+  border-radius: 20px;
+  align-items: center;
+}
+
+.lupa {
+  display: flex;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 150px auto;
+  background-color: var(--white);
+  margin-top: 24px;
+  padding: 48px;
+  border-radius: 20px;
+}
+
+.image {
+  object-fit: cover;
+  width: 117px;
+  height: 117px;
+  margin-top: 20px;
+}
+
+img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.name-join_field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1, h2, h3, h4, .btn, .input, p, span {
+  font-family: var(--main-typography);
+}
+
+h1 {
+  font-size: 26px;
+  line-height: 38px;
+  color: var(--dark-blue);
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 33px;
+  color: var(--dark-blue);
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--light-blue);
+}
+
+h4 {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--second-blue);
+  font-weight: 15;
+}
+
+.name {
+  margin-bottom: 0px;
+}
+
+.nick {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: var(--medium-blue);
+  width: 595px;
+}
+
+span {
+  color: var(--medium-blue);
+}
+
+.number {
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+
+.infos_field {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--transparent-blue);
+  width: 480px;
+  padding: 0px 83px 17px 32px;
+  border-radius: 20px;
+}
+
+.input {
+  border: none;
+  padding-left: 24px;
+  width: 500px;
+}
+
+textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+} 
+
+button {
+  border: none;
+  background-color: var(--light-blue);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 10px;
+}
+
+.local_field {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.info {
+  margin-top: 19px;
+}
+
+
