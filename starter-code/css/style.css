@@ -7,7 +7,8 @@
   --second-blue: #697C9A;
   --dark-blue: #2B3442;
   --transparent-blue: #F6F8FF;
-  --white: #FEFEFE
+  --white: #FEFEFE;
+  --red: #F74646
 }
 
 body {
@@ -25,15 +26,10 @@ header {
 
 nav {
   display: flex;
-  justify-content: space-between;
   background-color: var(--white);
   padding: 22px 10px 22px 32px;
   border-radius: 20px;
   align-items: center;
-}
-
-.lupa {
-  display: flex;
 }
 
 main {
@@ -46,7 +42,6 @@ main {
 }
 
 .image {
-  object-fit: cover;
   width: 117px;
   height: 117px;
   margin-top: 20px;
@@ -127,7 +122,13 @@ span {
 .input {
   border: none;
   padding-left: 24px;
-  width: 500px;
+  width: 50%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 textarea:focus, input:focus, select:focus {
@@ -136,12 +137,26 @@ textarea:focus, input:focus, select:focus {
   outline: 0;
 } 
 
-button {
+.btn {
   border: none;
   background-color: var(--light-blue);
   color: var(--white);
   padding: 12px 24px;
   border-radius: 10px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+#result {
+  display: inline-block;
+  color: var(--red);
+  font-family: var(--main-typography);
+  text-transform: uppercase;
+  margin-right: 24px;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .local_field {
