@@ -50,6 +50,20 @@ const default_data = `
   </div>
 </div>
 `
+let months = {
+  1: 'Jan',
+  2: 'Feb',
+  3: 'Mar',
+  4: 'Apr',
+  5: 'May',
+  6: 'June',
+  7: 'July',
+  8: 'Aug',
+  9: 'Sept',
+  10: 'Oct',
+  11: 'Nov',
+  12: 'Dec'
+}
 
 window.addEventListener('DOMContentLoaded', () => {
   if(MAIN.childNodes.length === 0) {
@@ -62,7 +76,11 @@ const FORM = document.querySelector('form').addEventListener('submit', (e) => {
   fetch(`https://api.github.com/users/${INPUT.value}`)
   .then(response => response.json())
   .then(data => {
-    console.log(data)
+    let date = new Date(data.created_at)
+    let day = date.getDate().toString().padStart(2, '0')
+    let month = (date.getMonth()+1).toString().padStart(2)
+    let year = date.getFullYear()
+    
     if(data.message === 'Not Found') {
       MAIN.innerHTML = ''
       RESULT.innerHTML = 'no results'
@@ -77,7 +95,7 @@ const FORM = document.querySelector('form').addEventListener('submit', (e) => {
         <div class="general">
           <div class="name-join_field">
             <h1 id="name" class="name">${data.name}</h1>
-            <h4 id="join">Joined ${data.created_at}</h4>
+            <h4 id="join">Joined ${day} ${months[parseInt(month)]} ${year}</h4>
           </div>
           <h3 id="nick" class="nick">@${data.login}</h3>
           <p id="bio">${data.bio}</p>

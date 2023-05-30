@@ -58,6 +58,10 @@ img {
   align-items: center;
 }
 
+#join {
+  margin-bottom: 0px;
+}
+
 h1, h2, h3, h4, .btn, .input, p, span {
   font-family: var(--main-typography);
 }
