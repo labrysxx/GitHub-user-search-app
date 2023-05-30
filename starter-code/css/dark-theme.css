@@ -1,0 +1,25 @@
+:root {
+  --dark-blue: #141D2F;
+  --medium-blue: #1E2A47;
+  --light-blue: #0079FF
+}
+
+.ligth-theme-login {
+  color: var(--light-blue);
+}
+
+.dark-theme-body {
+  background-color: var(--dark-blue);
+}
+
+.dark-theme-main-nav {
+  background-color: var(--medium-blue);
+}
+
+.dark-theme-icons-letter {
+  color: #FFFFFF;
+}
+
+.letter-icon::placeholder {
+  color: var(--medium-blue);
+}

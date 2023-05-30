@@ -14,6 +14,26 @@ let city = document.getElementById('city')
 let site = document.getElementById('site')
 let twitter = document.getElementById('twitter')
 let company = document.getElementById('company')
+let body = document.querySelector('body')
+let infos = document.querySelector('.infos_field')
+let letters = document.querySelectorAll('.letter-icon')
+let main = document.querySelector('main')
+let nav = document.querySelector('nav')
+let theme = document.getElementById('theme')
+
+theme.addEventListener('click', (e) => {
+  e.preventDefault()
+  theme.innerHTML = 'Light'
+  main.classList.toggle('dark-theme-main-nav')
+  nav.classList.toggle('dark-theme-main-nav')
+  body.classList.toggle('dark-theme-body')
+  INPUT.classList.toggle('dark-theme-main-nav')
+  infos.classList.toggle('dark-theme-body')
+  nickname.classList.toggle('ligth-theme-login')
+  for(let i = 0; i < letters.length; i++) {
+    letters[i].classList.toggle('dark-theme-icons-letter')
+  }
+})
 
 let months = {
   1: 'Jan',
@@ -57,9 +77,19 @@ const FORM = document.querySelector('form').addEventListener('submit', (e) => {
       repos.innerHTML = `${data.public_repos}`
       followers.innerHTML = `${data.followers}`
       following.innerHTML = `${data.following}`
-      city.innerHTML = `${data.location}`
-      site.setAttribute('href', `${data.html_url}`)
-      site.innerHTML = `${data.html_url}`
+      if(data.location === null) {
+        city.classList.add('opacity')
+        city.innerHTML = 'Not Available'
+      } else {
+        city.innerHTML = `${data.location}`
+      }
+      if(data.html_url === null) {
+        site.classList.add('opacity')
+        site.innerHTML = 'Not Available'
+      } else {
+        site.setAttribute('href', `${data.html_url}`)
+        site.innerHTML = `${data.html_url}`
+      }
       if(data.twitter_username === null) {
         twitter.classList.add('opacity')
         twitter.innerHTML = 'Not Available'

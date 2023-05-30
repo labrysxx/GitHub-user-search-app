@@ -24,6 +24,23 @@ header {
   width: 60%;
 }
 
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 nav {
   display: flex;
   background-color: var(--white);
@@ -179,6 +196,10 @@ textarea:focus, input:focus, select:focus {
 
 .info {
   margin-top: 19px;
+}
+
+span {
+  margin-right: 10px;
 }
 
 
