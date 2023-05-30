@@ -23,7 +23,6 @@ let theme = document.getElementById('theme')
 
 theme.addEventListener('click', (e) => {
   e.preventDefault()
-  theme.innerHTML = 'Light'
   main.classList.toggle('dark-theme-main-nav')
   nav.classList.toggle('dark-theme-main-nav')
   body.classList.toggle('dark-theme-body')
@@ -32,6 +31,11 @@ theme.addEventListener('click', (e) => {
   nickname.classList.toggle('ligth-theme-login')
   for(let i = 0; i < letters.length; i++) {
     letters[i].classList.toggle('dark-theme-icons-letter')
+  }
+  if(theme.innerHTML === 'Ligth') {
+    theme.innerText = 'Dark'
+  } else if(theme.innerHTML === 'Dark'){
+    theme.innerText = 'Ligth'
   }
 })
 
@@ -57,7 +61,7 @@ const FORM = document.querySelector('form').addEventListener('submit', (e) => {
   .then(data => {
     let date = new Date(data.created_at)
     let day = date.getDate().toString().padStart(2, '0')
-    let month = (date.getMonth()+1).toString().padStart(2)
+    let month = (date.getMonth()+1).toString()
     let year = date.getFullYear()
     
     if(data.message === 'Not Found') {
