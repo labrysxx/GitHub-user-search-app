@@ -17,19 +17,20 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--transparent-blue);
-  margin: 144px 355px 170px 355px;
+  margin: 0 auto;
 }
 
 header {
-  width: 841px;
+  width: 60%;
 }
 
 nav {
   display: flex;
   background-color: var(--white);
-  padding: 22px 10px 22px 32px;
+  padding: 22px 32px 22px 32px;
   border-radius: 20px;
   align-items: center;
+  box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
 main {
@@ -37,8 +38,10 @@ main {
   grid-template-columns: 150px auto;
   background-color: var(--white);
   margin-top: 24px;
-  padding: 48px;
+  width: calc(60% - 62px);
+  padding: 31px;
   border-radius: 20px;
+  box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
 .image {
@@ -56,6 +59,10 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.opacity {
+  opacity: 0.75;
 }
 
 #join {
@@ -98,6 +105,7 @@ h4 {
 .nick {
   margin-top: 0px;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 p {
@@ -116,11 +124,11 @@ span {
 
 .infos_field {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color: var(--transparent-blue);
-  width: 480px;
-  padding: 0px 83px 17px 32px;
-  border-radius: 20px;
+  width: 100%;
+  padding: 0px 20px 17px 0px;
+  border-radius: 20px
 }
 
 .input {
@@ -157,14 +165,12 @@ textarea:focus, input:focus, select:focus {
   display: inline-block;
   color: var(--red);
   font-family: var(--main-typography);
-  text-transform: uppercase;
   margin-right: 24px;
-  font-weight: bold;
   font-size: 15px;
 }
 
 .local_field {
-  width: 500px;
+  width: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
