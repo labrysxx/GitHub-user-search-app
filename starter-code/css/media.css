@@ -1,0 +1,19 @@
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  header {
+    width: 90%;
+  }
+
+  main {
+    display: unset;
+    width: 80%;
+  }
+
+  .local_field {
+    flex-direction: column;
+    align-items: self-start;
+  }
+
+  p {
+    width: auto;
+  }
+}
