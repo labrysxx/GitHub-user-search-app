@@ -1,11 +1,21 @@
 @media screen and (min-width: 481px) and (max-width: 767px) {
+  body {
+    box-sizing: border-box;
+  }
+
   header {
-    width: 90%;
+    width: 80%;
   }
 
   main {
     display: unset;
     width: 80%;
+    box-sizing: border-box;
+  }
+
+  .name-join_field {
+    flex-direction: column;
+    align-items: self-start;
   }
 
   .local_field {
