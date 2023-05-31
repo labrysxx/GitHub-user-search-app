@@ -16,4 +16,13 @@
   p {
     width: auto;
   }
+
+  #result {
+    display: block;
+    margin-left: 20px;
+  }
+
+  .search {
+    display: flex;
+  }
 }
