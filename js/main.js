@@ -1,6 +1,7 @@
 const INPUT = document.getElementById('name')
 const MAIN = document.querySelector('main')
 const RESULT = document.getElementById('result')
+const FORM = document.querySelector('form')
 
 let image = document.getElementById('image')
 let join = document.getElementById('join')
@@ -20,7 +21,19 @@ let letters = document.querySelectorAll('.letter-icon')
 let main = document.querySelector('main')
 let nav = document.querySelector('nav')
 let theme = document.getElementById('theme')
-const FORM = document.querySelector('form').addEventListener('submit', (e) => {
+let back = document.getElementById('back')
+
+// carrega informações do octocat na página inicial
+window.addEventListener('DOMContentLoaded', () => {
+  fetch('https://api.github.com/users/octocat')
+    .then(response => {return response.json()})
+    .then(data => {
+      checagens(data)
+    }
+    )
+})
+
+FORM.addEventListener('submit', (e) => {
   e.preventDefault()
   fetch(`https://api.github.com/users/${INPUT.value}`)
   .then(response => response.json())
@@ -35,7 +48,17 @@ const FORM = document.querySelector('form').addEventListener('submit', (e) => {
 
 theme.addEventListener('click', (e) => {
   e.preventDefault()
-  darkTheme()
+  changeTheme()
+})
+
+back.addEventListener('click', (e) => {
+  e.preventDefault()
+  fetch('https://api.github.com/users/octocat')
+    .then(response => {return response.json()})
+    .then(data => {
+      checagens(data)
+    }
+    )
 })
 
 let months = {
@@ -109,7 +132,7 @@ function checagens(data) {
   }
 }
 
-function darkTheme() {
+function changeTheme() {
   main.classList.toggle('dark-theme-main-nav')
   nav.classList.toggle('dark-theme-main-nav')
   body.classList.toggle('dark-theme-body')
