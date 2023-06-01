@@ -20,23 +20,22 @@ let letters = document.querySelectorAll('.letter-icon')
 let main = document.querySelector('main')
 let nav = document.querySelector('nav')
 let theme = document.getElementById('theme')
+const FORM = document.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault()
+  fetch(`https://api.github.com/users/${INPUT.value}`)
+  .then(response => response.json())
+  .then(data => {
+    checagens(data)
+    // Aqui você pode lidar com os dados retornados pela API
+  })
+  .catch(error => {
+    console.error('Ocorreu um erro:', error);
+  });
+})
 
 theme.addEventListener('click', (e) => {
   e.preventDefault()
-  main.classList.toggle('dark-theme-main-nav')
-  nav.classList.toggle('dark-theme-main-nav')
-  body.classList.toggle('dark-theme-body')
-  INPUT.classList.toggle('dark-theme-main-nav')
-  infos.classList.toggle('dark-theme-body')
-  nickname.classList.toggle('ligth-theme-login')
-  for(let i = 0; i < letters.length; i++) {
-    letters[i].classList.toggle('dark-theme-icons-letter')
-  }
-  if(theme.innerHTML === 'Ligth') {
-    theme.innerText = 'Dark'
-  } else if(theme.innerHTML === 'Dark'){
-    theme.innerText = 'Ligth'
-  }
+  darkTheme()
 })
 
 let months = {
@@ -54,62 +53,75 @@ let months = {
   12: 'Dec'
 }
 
-const FORM = document.querySelector('form').addEventListener('submit', (e) => {
-  e.preventDefault()
-  fetch(`https://api.github.com/users/${INPUT.value}`)
-  .then(response => response.json())
-  .then(data => {
-    let date = new Date(data.created_at)
-    let day = date.getDate().toString().padStart(2, '0')
-    let month = (date.getMonth()+1).toString()
-    let year = date.getFullYear()
-    
-    if(data.message === 'Not Found') {
-      RESULT.innerHTML = 'No results'
-    } else {
-      RESULT.innerHTML = ''
-      image.src = `${data.avatar_url}`
-      user.innerHTML = `${data.name}`
-      join.innerHTML = `Joined ${day} ${months[parseInt(month)]} ${year}`
-      nickname.innerHTML = `@${data.login}`
-      if(data.bio === null) {
-        bio.classList.add('opacity')
-        bio.innerHTML = 'This profile has no bio'
-      } else {
-        bio.innerHTML = `${data.bio}`
-      }
-      repos.innerHTML = `${data.public_repos}`
-      followers.innerHTML = `${data.followers}`
-      following.innerHTML = `${data.following}`
-      if(data.location === null) {
-        city.classList.add('opacity')
-        city.innerHTML = 'Not Available'
-      } else {
-        city.innerHTML = `${data.location}`
-      }
-      if(data.html_url === null) {
-        site.classList.add('opacity')
-        site.innerHTML = 'Not Available'
-      } else {
-        site.setAttribute('href', `${data.html_url}`)
-        site.innerHTML = `${data.html_url}`
-      }
-      if(data.twitter_username === null) {
-        twitter.classList.add('opacity')
-        twitter.innerHTML = 'Not Available'
-      } else {
-        twitter.innerHTML = `${data.twitter_username}`
-      }
-      if(data.company === null) {
-        company.classList.add('opacity')
-        company.innerHTML = 'Not Available'
-      } else {
-        company.innerHTML = `${data.company}`
-      }
-    }
-    // Aqui você pode lidar com os dados retornados pela API
-  })
-  .catch(error => {
-    console.error('Ocorreu um erro:', error);
-  });
-})
+function checagens(data) {
+  let date = new Date(data.created_at)
+  let day = date.getDate().toString().padStart(2, '0')
+  let month = (date.getMonth()+1).toString()
+  let year = date.getFullYear()
+  //checa se o usuário existe
+  if(data.message === 'Not Found') {
+    RESULT.innerHTML = 'No results'
+  } else {
+    RESULT.innerHTML = ''
+    image.src = `${data.avatar_url}`
+    user.innerHTML = `${data.name}`
+    join.innerHTML = `Joined ${day} ${months[parseInt(month)]} ${year}`
+    nickname.innerHTML = `@${data.login}`
+  }
+  //checa se o usuário tem bio
+  if(data.bio === null) {
+    bio.classList.add('opacity')
+    bio.innerHTML = 'This profile has no bio'
+  } else {
+    bio.innerHTML = `${data.bio}`
+  }
+  repos.innerHTML = `${data.public_repos}`
+  followers.innerHTML = `${data.followers}`
+  following.innerHTML = `${data.following}`
+  //checa se o usuário tem localização
+  if(data.location === null) {
+    city.classList.add('opacity')
+    city.innerHTML = 'Not Available'
+  } else {
+    city.innerHTML = `${data.location}`
+  }
+  //checa se o usuário tem site
+  if(data.html_url === null) {
+    site.classList.add('opacity')
+    site.innerHTML = 'Not Available'
+  } else {
+    site.setAttribute('href', `${data.html_url}`)
+    site.innerHTML = `${data.html_url}`
+  }
+  //checa se o usuário tem twitter
+  if(data.twitter_username === null) {
+    twitter.classList.add('opacity')
+    twitter.innerHTML = 'Not Available'
+  } else {
+    twitter.innerHTML = `${data.twitter_username}`
+  }
+  //checa se o usuário tem companhia
+  if(data.company === null) {
+    company.classList.add('opacity')
+    company.innerHTML = 'Not Available'
+  } else {
+    company.innerHTML = `${data.company}`
+  }
+}
+
+function darkTheme() {
+  main.classList.toggle('dark-theme-main-nav')
+  nav.classList.toggle('dark-theme-main-nav')
+  body.classList.toggle('dark-theme-body')
+  infos.classList.toggle('dark-theme-body')
+  nickname.classList.toggle('ligth-theme-login')
+  INPUT.classList.toggle('dark-theme-main-nav')
+  for(let i = 0; i < letters.length; i++) {
+    letters[i].classList.toggle('dark-theme-icons-letter')
+  }
+  if(theme.innerHTML === 'Ligth') {
+    theme.innerText = 'Dark'
+  } else if(theme.innerHTML === 'Dark'){
+    theme.innerText = 'Ligth'
+  }
+}
