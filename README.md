@@ -8,6 +8,6 @@ Pra fazer esse projeto usei HTML, CSS e JavaScript. Consumi a [API do GitHub](ht
 - [x] Poder **mudar** o tema da página
 - [x] Poder **voltar** á página inicial (The Octocat) a qualquer momento
 - [x] Retornar **No results** caso o usuário digitado não for encontrado
-- [] Responsividade
+- [ ] Responsividade
 
 
