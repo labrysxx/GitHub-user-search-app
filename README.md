@@ -1,10 +1,10 @@
 ## Olá! 👋
+![Design preview for the GitHub user search app coding challenge](./preview.jpg)
 <div align="left">
 
 ![Badge em Desenvolvimento ](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge )
 
 </div>
-![Design preview for the GitHub user search app coding challenge](./preview.jpg)
 Pra fazer esse projeto usei HTML, CSS e JavaScript. Consumi a [API do GitHub](https://docs.github.com/en/rest/reference/users#get-a-user) e adicionei responsividade à página.
 
 
