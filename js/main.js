@@ -38,6 +38,7 @@ FORM.addEventListener('submit', (e) => {
   fetch(`https://api.github.com/users/${INPUT.value}`)
   .then(response => response.json())
   .then(data => {
+    INPUT.value = ''
     checagens(data)
     // Aqui você pode lidar com os dados retornados pela API
   })

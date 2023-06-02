@@ -61,6 +61,11 @@ main {
   box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
+.back-right {
+  display: flex;
+  justify-content: space-between;
+}
+
 .back h5{
   margin: 0;
   text-align: end;
@@ -82,10 +87,10 @@ img {
   border-radius: 50%;
 }
 
-.name-join_field {
+.name_field {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 
 .opacity {
