@@ -5,7 +5,7 @@
 ![Badge em Desenvolvimento ](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge )
 
 </div>
-Pra fazer esse projeto usei HTML, CSS e JavaScript. Consumi a [API do GitHub](https://docs.github.com/en/rest/reference/users#get-a-user) e adicionei responsividade à página.
+Pra fazer esse projeto usei HTML, CSS e JavaScript. Consumi a ![API do GitHub](https://docs.github.com/en/rest/reference/users#get-a-user) e adicionei responsividade à página.
 
 
 ## Funcionalidades
