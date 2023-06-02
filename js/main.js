@@ -38,6 +38,7 @@ FORM.addEventListener('submit', (e) => {
   fetch(`https://api.github.com/users/${INPUT.value}`)
   .then(response => response.json())
   .then(data => {
+    console.log(data)
     INPUT.value = ''
     checagens(data)
     // Aqui você pode lidar com os dados retornados pela API
@@ -91,26 +92,26 @@ function checagens(data) {
     user.innerHTML = `${data.name}`
     join.innerHTML = `Joined ${day} ${months[parseInt(month)]} ${year}`
     nickname.innerHTML = `@${data.login}`
+    repos.innerHTML = `${data.public_repos}`
+    followers.innerHTML = `${data.followers}`
+    following.innerHTML = `${data.following}`
   }
   //checa se o usuário tem bio
-  if(data.bio === null) {
+  if(data.bio === null || data.message === 'Not Found') {
     bio.classList.add('opacity')
     bio.innerHTML = 'This profile has no bio'
   } else {
     bio.innerHTML = `${data.bio}`
   }
-  repos.innerHTML = `${data.public_repos}`
-  followers.innerHTML = `${data.followers}`
-  following.innerHTML = `${data.following}`
   //checa se o usuário tem localização
-  if(data.location === null) {
+  if(data.location === null || data.message === 'Not Found') {
     city.classList.add('opacity')
     city.innerHTML = 'Not Available'
   } else {
     city.innerHTML = `${data.location}`
   }
   //checa se o usuário tem site
-  if(data.html_url === null) {
+  if(data.html_url === null || data.message === 'Not Found') {
     site.classList.add('opacity')
     site.innerHTML = 'Not Available'
   } else {
@@ -118,14 +119,14 @@ function checagens(data) {
     site.innerHTML = `${data.html_url}`
   }
   //checa se o usuário tem twitter
-  if(data.twitter_username === null) {
+  if(data.twitter_username === null || data.message === 'Not Found') {
     twitter.classList.add('opacity')
     twitter.innerHTML = 'Not Available'
   } else {
     twitter.innerHTML = `${data.twitter_username}`
   }
   //checa se o usuário tem companhia
-  if(data.company === null) {
+  if(data.company === null || data.message === 'Not Found') {
     company.classList.add('opacity')
     company.innerHTML = 'Not Available'
   } else {
