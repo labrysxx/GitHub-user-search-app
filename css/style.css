@@ -61,6 +61,11 @@ main {
   box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
+.back-icon {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .back-right {
   display: flex;
   justify-content: space-between;
