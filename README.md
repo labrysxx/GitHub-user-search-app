@@ -11,7 +11,7 @@
 </div>
 <div align="center" style="width: 50%">
 
-![Animação](https://github.com/labrysxx/GitHub-user-search-app/assets/101073597/10dececf-453e-49c8-82c4-bed519d1f0f1)
+![Animação](https://github.com/labrysxx/GitHub-user-search-app/assets/101073597/e73f7483-cf40-4989-9fe8-0ae633c69a4c)
 
 </div>
 
@@ -26,6 +26,6 @@ Pra fazer esse projeto usei HTML, CSS e JavaScript. Consumi a API do GitHub e ad
 - [x] Responsividade
 
 ## Onde me encontrar:
-⭐[Linkedin](https://www.linkedin.com/in/carolinegfaria/)
+⭐ [Linkedin](https://www.linkedin.com/in/carolinegfaria/)
 
 
