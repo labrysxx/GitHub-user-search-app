@@ -4,9 +4,12 @@
 ![Badge em Desenvolvimento ](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge )
 
 </div>
+<div align="center" style="width: 50%">
 
 ![Design preview for the GitHub user search app coding challenge](./preview.jpg)
-<div align="left">
+
+</div>
+<div align="center" style="width: 50%">
 
 ![Animação](https://github.com/labrysxx/GitHub-user-search-app/assets/101073597/10dececf-453e-49c8-82c4-bed519d1f0f1)
 
