@@ -1,5 +1,4 @@
 @media screen and (min-width: 360px) and (max-width: 767px) {
-
   p {
     width: auto;
   }
@@ -44,7 +43,7 @@
 
 @media screen and (min-width: 1025px) {
   nav {
-    width: 100%;
+    width: auto;
   }
   
   main {
