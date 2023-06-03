@@ -1,10 +1,17 @@
 ## Olá! 👋
-![Design preview for the GitHub user search app coding challenge](./preview.jpg)
 <div align="left">
 
 ![Badge em Desenvolvimento ](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge )
 
 </div>
+
+![Design preview for the GitHub user search app coding challenge](./preview.jpg)
+<div align="left">
+
+![Animação](https://github.com/labrysxx/GitHub-user-search-app/assets/101073597/10dececf-453e-49c8-82c4-bed519d1f0f1)
+
+</div>
+
 Pra fazer esse projeto usei HTML, CSS e JavaScript. Consumi a API do GitHub e adicionei responsividade à página.
 
 
@@ -13,6 +20,9 @@ Pra fazer esse projeto usei HTML, CSS e JavaScript. Consumi a API do GitHub e ad
 - [x] Poder **mudar** o tema da página
 - [x] Poder **voltar** á página inicial (The Octocat) a qualquer momento
 - [x] Retornar **No results** caso o usuário digitado não for encontrado
-- [ ] Responsividade
+- [x] Responsividade
+
+## Onde me encontrar:
+⭐[Linkedin](https://www.linkedin.com/in/carolinegfaria/)
 
 
